@@ -1,0 +1,32 @@
+print("""***************
+beynelxalq banka xos geldiniz
+emeliyyatlar;
+1.balansa baxma
+2.balans artirma
+3.balansdan pul cekme
+
+sistemi sonlandirmaq ucun `cixisa` basin
+*****************""")
+
+balans=1000
+
+while True:
+    emeliyat=input("emeliyat secin:")
+
+    if (emeliyat=="cixisa"):
+        print("sistemnen cixilir")
+        break
+    elif(emeliyat=="1"):
+        print("balansiniz {} azndir".format(balans))
+
+    elif(emeliyat=="2"):
+        miqdar=int(input("miqdari girin:"))
+        balans+=miqdar
+    elif(emeliyat=="3"):
+        miqdar=int(input("miqdari girin:"))
+        if(balans-miqdar<0):
+            print("kifayet qeder mebleg yoxdur")
+            continue
+        balans-=miqdar
+    else:
+        print("kecersiz emeliyat")
